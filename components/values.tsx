@@ -49,7 +49,7 @@ export function Values() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="group relative p-8 rounded-3xl glass-card glass-card-hover morph-hover shimmer"
+              className="group relative p-8 rounded-3xl glass-card glass-card-hover morph-hover shimmer bg-slate-900/90"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -62,8 +62,8 @@ export function Values() {
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <h3 className="text-xl font-semibold">{value.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+                  <h3 className="text-xl font-semibold text-white">{value.title}</h3>
+                  <p className="text-slate-300 leading-relaxed">{value.description}</p>
                 </div>
               </div>
               {hoveredIndex === index && (

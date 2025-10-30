@@ -48,12 +48,12 @@ export function Hero({ onContactClick, onDisclaimerClick }: HeroProps) {
 
       <div className="container relative z-10 mx-auto px-6 py-32">
         <div className="max-w-5xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card shimmer text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card shimmer text-sm font-medium mb-6 bg-slate-900/90">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-semibold">
               Revolutionizing Cloud Infrastructure
             </span>
           </div>
@@ -65,7 +65,7 @@ export function Hero({ onContactClick, onDisclaimerClick }: HeroProps) {
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-balance leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto text-balance leading-relaxed">
             Autonomous, adaptive, and always connected. We revolutionize hosting through intelligent technology,
             automation, and distributed infrastructure.
           </p>
@@ -74,7 +74,7 @@ export function Hero({ onContactClick, onDisclaimerClick }: HeroProps) {
             <Button
               size="lg"
               onClick={onDisclaimerClick}
-              className="liquid-button rounded-full text-base px-8 group relative z-10 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500"
+              className="liquid-button rounded-full text-base px-8 group relative z-10 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold"
             >
               <span className="relative z-10">Explore Our Solutions</span>
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 relative z-10" />
@@ -83,7 +83,7 @@ export function Hero({ onContactClick, onDisclaimerClick }: HeroProps) {
               size="lg"
               variant="outline"
               onClick={onDisclaimerClick}
-              className="liquid-button rounded-full text-base px-8 glass-card border-white/20 hover:border-white/40 bg-transparent"
+              className="liquid-button rounded-full text-base px-8 glass-card border-white/20 hover:border-white/40 bg-slate-900/80 text-white font-semibold"
             >
               Learn More
             </Button>

@@ -27,8 +27,8 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-md" onClick={onClose} />
 
-      {/* Modal */}
-      <div className="relative glass-card rounded-3xl p-8 max-w-md w-full shadow-2xl animate-in zoom-in-95 duration-500 border-2 border-white/20">
+      {/* Modal - Added solid background for better text contrast */}
+      <div className="relative glass-card rounded-3xl p-8 max-w-md w-full shadow-2xl animate-in zoom-in-95 duration-500 border-2 border-white/20 bg-slate-900/95">
         {/* Glow effect */}
         <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 rounded-3xl blur-xl opacity-50 glow" />
 
@@ -36,9 +36,9 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute -top-2 -right-2 p-2 rounded-full glass-card border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
+            className="absolute -top-2 -right-2 p-2 rounded-full glass-card border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110 bg-slate-800/90"
           >
-            <X className="h-4 w-4" />
+            <X className="h-4 w-4 text-white" />
           </button>
 
           {/* Icon */}
@@ -49,13 +49,13 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           </div>
 
           {/* Content */}
-          <h2 className="text-2xl font-bold text-center mb-4 text-balance">Contattaci</h2>
-          <p className="text-muted-foreground text-center mb-6 leading-relaxed">
+          <h2 className="text-2xl font-bold text-center mb-4 text-balance text-white">Contattaci</h2>
+          <p className="text-slate-300 text-center mb-6 leading-relaxed">
             Per informazioni sui nostri servizi, scrivici all'indirizzo email:
           </p>
 
-          {/* Email display */}
-          <div className="glass-card rounded-2xl p-4 mb-6 border border-white/20 text-center">
+          {/* Email display - Added solid background */}
+          <div className="glass-card rounded-2xl p-4 mb-6 border border-white/20 text-center bg-slate-800/90">
             <p className="text-lg font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {email}
             </p>
@@ -65,7 +65,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           <div className="flex gap-3">
             <Button
               onClick={handleCopy}
-              className="flex-1 liquid-button relative z-10 rounded-full py-6 text-base font-semibold"
+              className="flex-1 liquid-button relative z-10 rounded-full py-6 text-base font-semibold text-white"
               size="lg"
             >
               <span className="relative z-10">{copied ? "Copiato!" : "Copia Email"}</span>
@@ -73,7 +73,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <Button
               onClick={onClose}
               variant="outline"
-              className="flex-1 liquid-button rounded-full py-6 text-base font-semibold glass-card border-white/20 hover:border-white/40 bg-transparent"
+              className="flex-1 liquid-button rounded-full py-6 text-base font-semibold glass-card border-white/20 hover:border-white/40 bg-slate-800/80 text-white"
               size="lg"
             >
               Chiudi
