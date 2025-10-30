@@ -83,7 +83,7 @@ export function Hero({ onContactClick, onDisclaimerClick }: HeroProps) {
               size="lg"
               variant="outline"
               onClick={onDisclaimerClick}
-              className="liquid-button rounded-full text-base px-8 glass-card border-white/20 hover:border-white/40 bg-slate-900/80 text-white font-semibold"
+              className="liquid-button rounded-full text-base px-8 glass-card border-white/20 hover:border-white/40 bg-slate-900/80 hover:bg-slate-700 text-white font-semibold transition-all duration-500"
             >
               Learn More
             </Button>

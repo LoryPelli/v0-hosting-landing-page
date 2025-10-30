@@ -68,7 +68,7 @@ export function Services({ onContactClick }: ServicesProps) {
 
                 <div className="space-y-3">
                   <h3 className="text-2xl font-semibold">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  <p className="text-slate-300 leading-relaxed">{service.description}</p>
                 </div>
 
                 <div className="pt-4 space-y-2">
@@ -77,7 +77,7 @@ export function Services({ onContactClick }: ServicesProps) {
                       <div
                         className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.gradient} transition-all duration-300 group-hover/feature:w-3`}
                       />
-                      <span className="text-muted-foreground">{feature}</span>
+                      <span className="text-slate-300">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -95,7 +95,7 @@ export function Services({ onContactClick }: ServicesProps) {
           <Button
             size="lg"
             onClick={onContactClick}
-            className="liquid-button rounded-full px-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 relative"
+            className="liquid-button rounded-full px-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 relative transition-all duration-500"
           >
             <span className="relative z-10">Contact Us</span>
           </Button>

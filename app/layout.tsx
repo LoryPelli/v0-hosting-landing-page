@@ -22,6 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`font-sans antialiased`}>
+        <div className="fixed inset-0 -z-10 bg-slate-950">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10 blur-3xl" />
+        </div>
         {children}
         <Analytics />
       </body>

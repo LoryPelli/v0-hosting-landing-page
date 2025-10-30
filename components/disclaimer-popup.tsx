@@ -39,7 +39,7 @@ export function DisclaimerPopup({ isOpen, onClose }: DisclaimerPopupProps) {
           {/* Button */}
           <Button
             onClick={onClose}
-            className="w-full liquid-button relative z-10 rounded-full py-6 text-lg font-semibold"
+            className="w-full liquid-button relative z-10 rounded-full py-6 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all duration-500"
             size="lg"
           >
             <span className="relative z-10">Ho Capito</span>
