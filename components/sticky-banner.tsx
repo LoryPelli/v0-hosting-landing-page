@@ -4,9 +4,9 @@ import { Info } from "lucide-react"
 
 export function StickyBanner() {
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] glass-card border-b border-white/10 backdrop-blur-xl animate-in slide-in-from-top duration-700">
+    <div className="fixed top-2 left-4 right-4 z-[60] glass-card border border-white/10 backdrop-blur-xl animate-in slide-in-from-top duration-700 rounded-2xl">
       {/* Gradient glow */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 glow" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 glow rounded-2xl" />
 
       <div className="relative container mx-auto px-6 py-3">
         <div className="flex items-center justify-center gap-3">

@@ -82,17 +82,14 @@ export function Hero({ onContactClick, onDisclaimerClick }: HeroProps) {
             <Button
               size="lg"
               variant="outline"
-              onClick={onDisclaimerClick}
-              className="liquid-button rounded-full text-base px-8 glass-card border-white/20 hover:border-white/40 bg-slate-900/80 hover:bg-slate-700 text-white font-semibold transition-all duration-500"
+              onClick={onContactClick}
+              className="liquid-button rounded-full text-base px-8 glass-card border-white/20 hover:border-white/40 bg-slate-900/80 hover:bg-slate-800/90 text-white font-semibold transition-all duration-500"
             >
-              Learn More
+              Contact Us
             </Button>
           </div>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   )
 }
