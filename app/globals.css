@@ -150,50 +150,26 @@
     }
   }
 
-  /* Enhanced custom scrollbar with animated gradient and glow effects */
   ::-webkit-scrollbar {
-    width: 14px;
-    height: 14px;
+    width: 12px;
   }
 
   ::-webkit-scrollbar-track {
     background: rgba(15, 23, 42, 0.5);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    margin: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-      180deg,
-      rgba(59, 130, 246, 0.9) 0%,
-      rgba(147, 51, 234, 0.9) 50%,
-      rgba(14, 165, 233, 0.9) 100%
-    );
-    border-radius: 10px;
-    border: 2px solid rgba(15, 23, 42, 0.5);
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    position: relative;
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.8), rgba(147, 51, 234, 0.8));
+    border-radius: 6px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, rgb(59, 130, 246) 0%, rgb(147, 51, 234) 50%, rgb(14, 165, 233) 100%);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(147, 51, 234, 0.4), inset 0 0 10px
-      rgba(255, 255, 255, 0.2);
-    transform: scaleX(1.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(180deg, rgb(59, 130, 246), rgb(147, 51, 234));
   }
 
-  ::-webkit-scrollbar-thumb:active {
-    background: linear-gradient(180deg, rgb(37, 99, 235) 0%, rgb(126, 34, 206) 50%, rgb(8, 145, 178) 100%);
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8), 0 0 50px rgba(147, 51, 234, 0.6);
-  }
-
-  /* Firefox scrollbar with enhanced styling */
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(59, 130, 246, 0.9) rgba(15, 23, 42, 0.5);
+    scrollbar-color: rgba(59, 130, 246, 0.8) rgba(15, 23, 42, 0.5);
   }
 }
 
@@ -204,7 +180,6 @@
     border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  /* Enhanced liquid button effect with better animation */
   .liquid-button::before {
     content: "";
     position: absolute;
@@ -272,7 +247,6 @@
     }
   }
 
-  /* Added enhanced card hover effects */
   .glass-card-hover {
     transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
