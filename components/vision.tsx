@@ -49,13 +49,13 @@ export function Vision() {
               {visionPoints.map((point, index) => (
                 <div
                   key={index}
-                  className="group relative p-8 rounded-3xl glass-card glass-card-hover morph-hover shimmer bg-slate-900/90"
+                  className="group relative p-8 rounded-3xl glass-card glass-card-hover morph-hover shimmer bg-slate-900/90 overflow-hidden transition-all duration-500"
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
                   <div className="space-y-4 relative z-10">
                     <div
-                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${point.gradient} flex items-center justify-center transition-all duration-500 ${hoveredIndex === index ? "scale-110 rotate-6" : ""}`}
+                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${point.gradient} flex items-center justify-center transition-all duration-500 ${hoveredIndex === index ? "scale-125 rotate-12 shadow-lg" : ""}`}
                     >
                       <span className="text-2xl font-bold text-white">{point.number}</span>
                     </div>
@@ -64,7 +64,7 @@ export function Vision() {
                   </div>
                   {hoveredIndex === index && (
                     <div
-                      className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${point.gradient} opacity-10 -z-10 blur-xl transition-opacity duration-500`}
+                      className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${point.gradient} opacity-20 blur-2xl transition-all duration-500 animate-pulse`}
                     />
                   )}
                 </div>

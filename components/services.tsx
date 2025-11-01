@@ -44,10 +44,10 @@ export function Services({ onContactClick }: ServicesProps) {
         <div className="max-w-3xl mx-auto text-center mb-20">
           <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">Our Services</h2>
           <p className="text-4xl md:text-5xl font-bold tracking-tight text-balance mb-6">
-            AI-powered distributed cloud solutions
+            AI-Powered Distributed Cloud Solutions
           </p>
           <p className="text-xl text-muted-foreground text-balance">
-            Designed to make digital infrastructure faster, more secure, and more intelligent.
+            Engineered to make digital infrastructure faster, more secure, and more intelligent.
           </p>
         </div>
 
@@ -55,13 +55,13 @@ export function Services({ onContactClick }: ServicesProps) {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative p-8 rounded-3xl glass-card glass-card-hover morph-hover shimmer"
+              className="group relative p-8 rounded-3xl glass-card glass-card-hover morph-hover shimmer overflow-hidden transition-all duration-500"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="space-y-6 relative z-10">
                 <div
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center transition-all duration-500 ${hoveredIndex === index ? "scale-110 rotate-12" : ""}`}
+                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center transition-all duration-500 ${hoveredIndex === index ? "scale-125 rotate-12 shadow-lg" : ""}`}
                 >
                   <service.icon className="h-7 w-7 text-white" />
                 </div>
@@ -84,7 +84,7 @@ export function Services({ onContactClick }: ServicesProps) {
               </div>
               {hoveredIndex === index && (
                 <div
-                  className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.gradient} opacity-10 -z-10 blur-2xl transition-opacity duration-500 glow`}
+                  className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.gradient} opacity-20 blur-2xl transition-all duration-500 animate-pulse`}
                 />
               )}
             </div>
@@ -95,7 +95,7 @@ export function Services({ onContactClick }: ServicesProps) {
           <Button
             size="lg"
             onClick={onContactClick}
-            className="liquid-button rounded-full px-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 relative transition-all duration-500"
+            className="liquid-button rounded-full px-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 relative transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(59,130,246,0.6),0_20px_40px_rgba(147,51,234,0.4)] overflow-hidden"
           >
             <span className="relative z-10">Contact Us</span>
           </Button>

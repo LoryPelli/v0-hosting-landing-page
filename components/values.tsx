@@ -49,14 +49,14 @@ export function Values() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="group relative p-8 rounded-3xl glass-card glass-card-hover morph-hover shimmer bg-slate-900/90"
+              className="group relative p-8 rounded-3xl glass-card glass-card-hover morph-hover shimmer bg-slate-900/90 overflow-hidden transition-all duration-500"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="flex items-start gap-6 relative z-10">
                 <div className="flex-shrink-0">
                   <div
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${value.gradient} flex items-center justify-center transition-all duration-500 ${hoveredIndex === index ? "scale-110 rotate-6" : ""}`}
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${value.gradient} flex items-center justify-center transition-all duration-500 ${hoveredIndex === index ? "scale-125 rotate-12 shadow-lg" : ""}`}
                   >
                     <value.icon className="h-6 w-6 text-white" />
                   </div>
@@ -68,7 +68,7 @@ export function Values() {
               </div>
               {hoveredIndex === index && (
                 <div
-                  className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${value.gradient} opacity-10 -z-10 blur-xl transition-opacity duration-500`}
+                  className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${value.gradient} opacity-20 blur-2xl transition-all duration-500 animate-pulse`}
                 />
               )}
             </div>

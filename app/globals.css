@@ -117,20 +117,19 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
+    outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
   }
+
   body {
-    @apply bg-background text-foreground;
-    position: relative;
+    background-color: var(--background);
+    color: var(--foreground);
   }
 
   body::before {
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: -1;
     background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
       radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
@@ -150,34 +149,62 @@
       transform: scale(1.1);
     }
   }
+
+  /* Enhanced custom scrollbar with animated gradient and glow effects */
+  ::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      rgba(59, 130, 246, 0.9) 0%,
+      rgba(147, 51, 234, 0.9) 50%,
+      rgba(14, 165, 233, 0.9) 100%
+    );
+    border-radius: 10px;
+    border: 2px solid rgba(15, 23, 42, 0.5);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgb(59, 130, 246) 0%, rgb(147, 51, 234) 50%, rgb(14, 165, 233) 100%);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(147, 51, 234, 0.4), inset 0 0 10px
+      rgba(255, 255, 255, 0.2);
+    transform: scaleX(1.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(180deg, rgb(37, 99, 235) 0%, rgb(126, 34, 206) 50%, rgb(8, 145, 178) 100%);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8), 0 0 50px rgba(147, 51, 234, 0.6);
+  }
+
+  /* Firefox scrollbar with enhanced styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(59, 130, 246, 0.9) rgba(15, 23, 42, 0.5);
+  }
 }
 
-/* Adding liquid glass effect utilities and animations */
 @layer utilities {
   .glass-card {
     background: rgba(15, 23, 42, 0.4);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  .glass-card-hover {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .glass-card-hover:hover {
-    background: rgba(30, 41, 59, 0.5);
-    border-color: rgba(255, 255, 255, 0.25);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  }
-
-  .liquid-button {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
+  /* Enhanced liquid button effect with better animation */
   .liquid-button::before {
     content: "";
     position: absolute;
@@ -185,38 +212,54 @@
     left: 50%;
     width: 0;
     height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    opacity: 0;
   }
 
   .liquid-button:hover::before {
-    width: 300px;
-    height: 300px;
+    transform: translate(-50%, -50%) scale(4);
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    opacity: 1;
   }
 
-  .liquid-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+  .liquid-button:active::before {
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%) scale(2);
   }
 
-  .floating {
-    animation: floating 6s ease-in-out infinite;
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+  }
+
+  @keyframes shimmer {
+    to {
+      transform: translateX(100%);
+    }
   }
 
   @keyframes floating {
     0%,
     100% {
-      transform: translateY(0px);
+      transform: translateY(0);
     }
     50% {
       transform: translateY(-20px);
     }
-  }
-
-  .glow {
-    animation: glow 3s ease-in-out infinite;
   }
 
   @keyframes glow {
@@ -229,40 +272,19 @@
     }
   }
 
-  .shimmer {
-    position: relative;
-    overflow: hidden;
+  /* Added enhanced card hover effects */
+  .glass-card-hover {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  .shimmer::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    animation: shimmer 3s infinite;
-  }
-
-  @keyframes shimmer {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: 100%;
-    }
-  }
-
-  .gradient-border {
-    position: relative;
-    background: linear-gradient(var(--background), var(--background)) padding-box,
-      linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(147, 51, 234, 0.5)) border-box;
-    border: 2px solid transparent;
+  .glass-card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3), 0 0 40px rgba(147, 51, 234, 0.2);
   }
 
   .morph-hover {
-    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: border-radius 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .morph-hover:hover {

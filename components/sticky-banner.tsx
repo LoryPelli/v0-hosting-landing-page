@@ -14,7 +14,7 @@ export function StickyBanner() {
             <Info className="h-4 w-4 text-blue-400" />
           </div>
           <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">Attenzione:</span> Questo è un sito dimostrativo fittizio
+            <span className="font-semibold text-foreground">Notice:</span> This is a fictional demonstration website
           </p>
         </div>
       </div>
