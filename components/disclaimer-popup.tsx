@@ -21,8 +21,8 @@ export function DisclaimerPopup({ isOpen, onClose }: DisclaimerPopupProps) {
       }
     };
 
-    window.addEventListener('keydown', handleEscape);
-    return () => window.removeEventListener('keydown', handleEscape);
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
   }, [isOpen, onClose]);
 
   const handleClose = () => {
