@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@radix-ui/react-slot':
-        specifier: ^1.1.1
+        specifier: latest
         version: 1.2.3(@types/react@19.2.2)(react@19.2.0)
       class-variance-authority:
         specifier: ^0.7.1
@@ -18,8 +18,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       lucide-react:
-        specifier: ^0.552.0
-        version: 0.552.0(react@19.2.0)
+        specifier: ^0.454.0
+        version: 0.454.0(react@19.2.0)
       next:
         specifier: ^16.0.1
         version: 16.0.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -30,21 +30,27 @@ importers:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
       tailwind-merge:
-        specifier: ^3.3.1
-        version: 3.3.1
+        specifier: ^2.5.5
+        version: 2.5.5
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@4.1.16)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4.1.16
         version: 4.1.16
       '@types/node':
-        specifier: ^24.9.2
-        version: 24.9.2
+        specifier: ^22
+        version: 22.0.0
       '@types/react':
         specifier: ^19.2.2
         version: 19.2.2
       '@types/react-dom':
         specifier: ^19.2.2
         version: 19.2.2(@types/react@19.2.2)
+      postcss:
+        specifier: ^8.5
+        version: 8.5.6
       tailwindcss:
         specifier: ^4.1.16
         version: 4.1.16
@@ -52,7 +58,7 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       typescript:
-        specifier: ^5.9.3
+        specifier: ^5
         version: 5.9.3
 
 packages:
@@ -366,8 +372,8 @@ packages:
   '@tailwindcss/postcss@4.1.16':
     resolution: {integrity: sha512-Qn3SFGPXYQMKR/UtqS+dqvPrzEeBZHrFA92maT4zijCVggdsXnDBMsPFJo1eArX3J+O+Gi+8pV4PkqjLCNBk3A==}
 
-  '@types/node@24.9.2':
-    resolution: {integrity: sha512-uWN8YqxXxqFMX2RqGOrumsKeti4LlmIMIyV0lgut4jx7KQBcBiW6vkDtIBvHnHIquwNfJhk8v2OtmO8zXWHfPA==}
+  '@types/node@22.0.0':
+    resolution: {integrity: sha512-VT7KSYudcPOzP5Q0wfbowyNLaVR8QWUdw+088uFWwfvpY6uCWaXpqV6ieLAu9WBcnTa7H4Z5RLK8I5t2FuOcqw==}
 
   '@types/react-dom@19.2.2':
     resolution: {integrity: sha512-9KQPoO6mZCi7jcIStSnlOWn2nEF3mNmyr3rIAsGnAbQKYbRLyqmeSc39EVgtxXVia+LMT8j3knZLAZAh+xLmrw==}
@@ -478,10 +484,10 @@ packages:
     resolution: {integrity: sha512-utfs7Pr5uJyyvDETitgsaqSyjCb2qNRAtuqUeWIAKztsOYdcACf2KtARYXg2pSvhkt+9NfoaNY7fxjl6nuMjIQ==}
     engines: {node: '>= 12.0.0'}
 
-  lucide-react@0.552.0:
-    resolution: {integrity: sha512-g9WCjmfwqbexSnZE+2cl21PCfXOcqnGeWeMTNAOGEfpPbm/ZF4YIq77Z8qWrxbu660EKuLB4nSLggoKnCb+isw==}
+  lucide-react@0.454.0:
+    resolution: {integrity: sha512-hw7zMDwykCLnEzgncEEjHeA6+45aeEzRYuKHuyRSOPkhko+J3ySGjGIzu+mmMfDFG1vazHepMaYFYHbTFAZAAQ==}
     peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -561,8 +567,13 @@ packages:
       babel-plugin-macros:
         optional: true
 
-  tailwind-merge@3.3.1:
-    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
+  tailwind-merge@2.5.5:
+    resolution: {integrity: sha512-0LXunzzAZzo0tEPxV3I297ffKZPlKDrjj7NXphC8V5ak9yHC5zRmxnOe2m/Rd/7ivsOMJe3JZ2JVocoDdQTRBA==}
+
+  tailwindcss-animate@1.0.7:
+    resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
 
   tailwindcss@4.1.16:
     resolution: {integrity: sha512-pONL5awpaQX4LN5eiv7moSiSPd/DLDzKVRJz8Q9PgzmAdd1R4307GQS2ZpfiN7ZmekdQrfhZZiSE5jkLR4WNaA==}
@@ -582,8 +593,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@7.16.0:
-    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
+  undici-types@6.11.1:
+    resolution: {integrity: sha512-mIDEX2ek50x0OlRgxryxsenE5XaQD4on5U2inY7RApK3SOJpofyw7uW2AyfMKkhAxXIceo2DeWGVGwyvng1GNQ==}
 
 snapshots:
 
@@ -814,9 +825,9 @@ snapshots:
       postcss: 8.5.6
       tailwindcss: 4.1.16
 
-  '@types/node@24.9.2':
+  '@types/node@22.0.0':
     dependencies:
-      undici-types: 7.16.0
+      undici-types: 6.11.1
 
   '@types/react-dom@19.2.2(@types/react@19.2.2)':
     dependencies:
@@ -898,7 +909,7 @@ snapshots:
       lightningcss-win32-arm64-msvc: 1.30.2
       lightningcss-win32-x64-msvc: 1.30.2
 
-  lucide-react@0.552.0(react@19.2.0):
+  lucide-react@0.454.0(react@19.2.0):
     dependencies:
       react: 19.2.0
 
@@ -994,7 +1005,11 @@ snapshots:
       client-only: 0.0.1
       react: 19.2.0
 
-  tailwind-merge@3.3.1: {}
+  tailwind-merge@2.5.5: {}
+
+  tailwindcss-animate@1.0.7(tailwindcss@4.1.16):
+    dependencies:
+      tailwindcss: 4.1.16
 
   tailwindcss@4.1.16: {}
 
@@ -1006,4 +1021,4 @@ snapshots:
 
   typescript@5.9.3: {}
 
-  undici-types@7.16.0: {}
+  undici-types@6.11.1: {}
