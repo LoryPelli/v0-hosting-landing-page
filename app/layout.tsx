@@ -1,6 +1,6 @@
+import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import { cn } from '@/lib/utils';
 import './globals.css';
 
 const geist = Geist({ subsets: ['latin'] });

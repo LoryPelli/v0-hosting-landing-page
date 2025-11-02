@@ -1,8 +1,9 @@
 'use client';
 
-import { Shield, Leaf, Zap, Sparkles } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Leaf, Shield, Sparkles, Zap } from 'lucide-react';
 import { useState } from 'react';
+import { SectionHeader } from './section-header';
+import { ValueCard } from './value-card';
 
 const values = [
   {
@@ -39,47 +40,22 @@ export function Values() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id='values' className='py-32 relative'>
+    <section id='values' className='relative py-32'>
       <div className='container mx-auto px-6'>
-        <div className='max-w-3xl mx-auto text-center mb-20'>
-          <h2 className='text-sm font-semibold text-primary uppercase tracking-wider mb-4'>Our Values</h2>
-          <p className='text-4xl md:text-5xl font-bold tracking-tight text-balance'>Built on principles that matter</p>
-        </div>
+        <SectionHeader label='Our Values' title='Built on principles that matter' />
 
-        <div className='grid md:grid-cols-2 gap-8 max-w-6xl mx-auto'>
+        <div className='mx-auto grid max-w-6xl gap-8 md:grid-cols-2'>
           {values.map((value, index) => (
-            <div
+            <ValueCard
               key={index}
-              className='group relative p-8 rounded-3xl glass-card glass-card-hover morph-hover shimmer bg-slate-900/90 overflow-hidden transition-all duration-500'
+              icon={value.icon}
+              title={value.title}
+              description={value.description}
+              gradient={value.gradient}
+              isHovered={hoveredIndex === index}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div className='flex items-start gap-6 relative z-10'>
-                <div className='shrink-0'>
-                  <div
-                    className={cn(
-                      'w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500',
-                      `bg-linear-to-br ${value.gradient}`,
-                      hoveredIndex === index && 'scale-125 rotate-12 shadow-lg'
-                    )}
-                  >
-                    <value.icon className='h-6 w-6 text-white' />
-                  </div>
-                </div>
-                <div className='space-y-3'>
-                  <h3 className='text-xl font-semibold text-white'>{value.title}</h3>
-                  <p className='text-slate-300 leading-relaxed'>{value.description}</p>
-                </div>
-              </div>
-              {hoveredIndex === index && (
-                <div
-                  className={cn(
-                    'absolute inset-0 rounded-3xl opacity-20 blur-2xl transition-all duration-500 animate-pulse',
-                    `bg-linear-to-br ${value.gradient}`
-                  )}
-                />
-              )}
-            </div>
+            />
           ))}
         </div>
       </div>

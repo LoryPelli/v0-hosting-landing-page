@@ -1,7 +1,7 @@
 'use client';
 
-import { cn } from '@/lib/utils';
 import { useState } from 'react';
+import { VisionCard } from './vision-card';
 
 export function Vision() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -28,54 +28,36 @@ export function Vision() {
   ];
 
   return (
-    <section id='vision' className='py-32 relative'>
+    <section id='vision' className='relative py-32'>
       <div className='container mx-auto px-6'>
-        <div className='max-w-5xl mx-auto'>
-          <div className='text-center mb-16'>
-            <h2 className='text-sm font-semibold text-primary uppercase tracking-wider mb-4'>Our Vision</h2>
-            <p className='text-4xl md:text-5xl font-bold tracking-tight text-balance mb-8'>
+        <div className='mx-auto max-w-5xl'>
+          <div className='mb-16 text-center'>
+            <h2 className='text-primary mb-4 text-sm font-semibold tracking-wider uppercase'>Our Vision</h2>
+            <p className='mb-8 text-4xl font-bold tracking-tight text-balance md:text-5xl'>
               A world of intelligent, distributed infrastructure
             </p>
           </div>
 
           <div className='space-y-12'>
             <div className='prose prose-lg max-w-none'>
-              <p className='text-xl text-slate-300 leading-relaxed text-center'>
+              <p className='text-center text-xl leading-relaxed text-slate-300'>
                 Over the next five years, our goal is to expand globally and become a trusted partner for the management
                 and evolution of digital infrastructures.
               </p>
             </div>
 
-            <div className='grid md:grid-cols-3 gap-8 pt-8'>
+            <div className='grid gap-8 pt-8 md:grid-cols-3'>
               {visionPoints.map((point, index) => (
-                <div
+                <VisionCard
                   key={index}
-                  className='group relative p-8 rounded-3xl glass-card glass-card-hover morph-hover shimmer bg-slate-900/90 overflow-hidden transition-all duration-500'
+                  number={point.number}
+                  title={point.title}
+                  description={point.description}
+                  gradient={point.gradient}
+                  isHovered={hoveredIndex === index}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <div className='space-y-4 relative z-10'>
-                    <div
-                      className={cn(
-                        'w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500',
-                        `bg-linear-to-br ${point.gradient}`,
-                        hoveredIndex === index && 'scale-125 rotate-12 shadow-lg'
-                      )}
-                    >
-                      <span className='text-2xl font-bold text-white'>{point.number}</span>
-                    </div>
-                    <h3 className='text-xl font-semibold text-white'>{point.title}</h3>
-                    <p className='text-slate-300 leading-relaxed'>{point.description}</p>
-                  </div>
-                  {hoveredIndex === index && (
-                    <div
-                      className={cn(
-                        'absolute inset-0 rounded-3xl opacity-20 blur-2xl transition-all duration-500 animate-pulse',
-                        `bg-linear-to-br ${point.gradient}`
-                      )}
-                    />
-                  )}
-                </div>
+                />
               ))}
             </div>
           </div>
