@@ -4,7 +4,7 @@ export function Logo() {
   return (
     <div className='flex shrink-0 items-center gap-3'>
       <Image
-        src='/logo.png'
+        src='/favicon.ico'
         alt='SkyMesh Dynamics Logo'
         width={40}
         height={40}

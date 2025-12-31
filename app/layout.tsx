@@ -10,8 +10,7 @@ export const metadata: Metadata = {
   title: 'SkyMesh Dynamics - Building the IT Infrastructure of the Future',
   description:
     'Revolutionizing cloud hosting with AI-powered distributed solutions. Autonomous, adaptive, and always connected.',
-  icons: '/logo.png',
-  generator: 'v0.app',
+  icons: '/favicon.ico',
 };
 
 export default function RootLayout({
