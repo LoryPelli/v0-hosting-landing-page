@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
+import type { ReactNode } from 'react';
 
 interface NavLinkProps {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
   gradient: string;
 }
 
