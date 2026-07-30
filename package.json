@@ -7,7 +7,8 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
